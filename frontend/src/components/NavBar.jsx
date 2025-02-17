@@ -1,5 +1,12 @@
-import { Container, Flex, Text, HStack, Button, useColorMode } from "@chakra-ui/react";
-// import { useColorMode } from "@chakra-ui/color-mode"; 
+import {
+  Container,
+  Flex,
+  Text,
+  HStack,
+  Button,
+  useColorMode,
+} from "@chakra-ui/react";
+// import { useColorMode } from "@chakra-ui/color-mode";
 import { Link, useLocation } from "react-router-dom";
 import { BsPlusSquare } from "react-icons/bs";
 import { IoMoon } from "react-icons/io5";
@@ -28,7 +35,7 @@ const NavBar = () => {
           textAlign={"center"}
           bgGradient="linear(to-r, #00BFFF, #1E90FF)"
           bgClip="text"
-          color="blue.500"
+          // color="blue.500"
         >
           <Link to={"/"}>Product Store 🛒</Link>
         </Text>

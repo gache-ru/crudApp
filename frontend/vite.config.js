@@ -9,4 +9,11 @@ export default defineConfig({
       "@chakra-ui/react": "@chakra-ui/react",
     },
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:5000/",
+      },
+    },
+  },
 });
