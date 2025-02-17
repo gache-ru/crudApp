@@ -8,6 +8,7 @@ import {
   Input,
   Button,
 } from "@chakra-ui/react";
+import { useProductStore } from "@/store/product";
 
 const CreatePage = () => {
   const [newProduct, setNewProduct] = useState({
@@ -15,9 +16,13 @@ const CreatePage = () => {
     price: "",
     image: "",
   });
-  const handleAddProduct = () => {
+
+  const { createProduct } = useProductStore();
+  const handleAddProduct = async () => {
+    const { success, message } = await createProduct(newProduct);
     // e.preventDefault();
-    console.log(newProduct);
+    console.log("Success:", success);
+    console.log("Messsage:", message);
   };
   return (
     <Container maxW={"container.sm"}>
@@ -58,7 +63,7 @@ const CreatePage = () => {
                 setNewProduct({ ...newProduct, image: e.target.value })
               }
             />
-            <Button colorScheme="blue" onClick={handleAddProduct} w={'full'}>
+            <Button colorScheme="blue" onClick={handleAddProduct} w={"full"}>
               Add Product
             </Button>
           </VStack>
